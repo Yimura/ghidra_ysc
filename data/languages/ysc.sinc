@@ -61,6 +61,7 @@ define pcodeop TEXT_ASSIGN_INT;
 define pcodeop TEXT_APPEND_INT;
 define pcodeop joaat;
 define pcodeop memcpy;
+define pcodeop IS_BIT_SET;
 
 define pcodeop switchAssist;
 
@@ -775,4 +776,13 @@ enterskip: reloc is imm8 [ reloc=inst_next + imm8; ] { export *:4 reloc; }
 :PUSH_CONST_F7 is opcode = 126 {
         local tmp:4 = int2float(7:4);
         push32(tmp);
+}
+
+:BITTEST is opcode = 127 {
+        local dst:4;
+		local src:4;
+		pop32(dst);
+		pop32(src);
+		res:4 = IS_BIT_SET(src, dst);
+		push32(res);
 }

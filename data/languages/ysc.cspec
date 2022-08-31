@@ -22,12 +22,12 @@
     <default_proto>
         <prototype name="default" extrapop="unknown" stackshift="4">
             <input>
-            	<pentry minsize="1" maxsize="500" align="4">
+            	<pentry minsize="1" maxsize="4" align="4">
             	    <addr offset="0" space="stack"/>
             	</pentry>
             </input>
             <output>
-            	<pentry minsize="1" maxsize="500">
+            	<pentry minsize="1" maxsize="4">
                     <register name="RV"/>
                 </pentry>
             </output>

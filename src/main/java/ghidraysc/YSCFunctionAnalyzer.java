@@ -72,7 +72,7 @@ public class YSCFunctionAnalyzer extends AbstractAnalyzer {
 	public void registerOptions(Options options, Program program) {
 		options.registerOption(OPTION_NAME_NATIVE_JSON, OptionType.FILE_TYPE, null, null, "natives.json generated from NativeDB");
 		options.registerOption(OPTION_NAME_TRANSLATION, OptionType.FILE_TYPE, null, null,
-				"Required for versions greater than b350, in format <latest hash -> natives.json hash>");
+				"Required for versions greater than b350, in format <natives.json hash -> latest hash>");
 	}
 	
 	private void ReadNativesList (JSONObject obj, String namespace)
